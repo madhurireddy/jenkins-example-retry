@@ -9,7 +9,7 @@ pipeline {
     stage('stage 2') {
       steps {
         retry(5) {
-          sh './test-script.sh'
+          sh 'docker build -t nginx .'
         }
       }
     }
