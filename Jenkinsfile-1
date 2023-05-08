@@ -9,8 +9,9 @@ pipeline {
     stage('stage 2') {
       steps {
         retry(5) {
-	
-	  sh 'timestamp=$(date +%s); if (expr $timestamp % 2 == 0);then exit 0;else sleep 1; exit 1; fi'
+	  def ret = sh(script: 'timestamp=$(date +%s); if (expr $timestamp % 2 == 0);then exit 0;else sleep 1; exit 1; fi', returnStatus: true)
+	  println ret
+	   
           
         }
       }
