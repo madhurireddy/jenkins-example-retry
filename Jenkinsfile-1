@@ -10,7 +10,7 @@ pipeline {
       steps {
         retry(5) {
 	  def label_value = sh returnStatus: true, script: 'timestamp=$(date +%s); if (expr $timestamp % 2 == 0);then exit 0;else sleep 1; exit 1; fi'
-  	  return label_value.trim()
+  	  return label_value
 	  
 	  
 	   
