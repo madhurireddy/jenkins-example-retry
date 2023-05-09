@@ -10,7 +10,7 @@ pipeline {
       steps {
         script {
           def op = sh(returnStdout: true, script: 'docker build -t nginx .')
-          println op
+          println("Bla Bla : "+op)
         }
       }
     }
