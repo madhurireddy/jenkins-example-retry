@@ -8,10 +8,10 @@ pipeline {
     }
     stage('stage 2') {
       steps {
-        #retry(5) {
+        
           def op = sh(returnStdout: true, script: 'docker build -t nginx .')
           println op
-        #}
+        
       }
     }
     stage('stage 3') {
