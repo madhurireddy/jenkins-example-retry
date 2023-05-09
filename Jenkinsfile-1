@@ -9,8 +9,10 @@ pipeline {
     stage('stage 2') {
       steps {
         script {
+          print 'target build version...'
           def op = sh(returnStdout: true, script: 'docker build -t nginx .')
-          println("Bla Bla : "+op)
+          print 'target build version11...'
+          print op
         }
       }
     }
