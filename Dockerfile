@@ -17,11 +17,6 @@ RUN java -version
 WORKDIR /opt/tomcat/webapps
 RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
 
-ENV DOCKER_HOST="tcp://docker:2376/"
-ENV DOCKER_TLS_CERTDIR="/certs"
-ENV DOCKER_TLS_VERIFY=1
-ENV DOCKER_CERT_PATH="$DOCKER_TLS_CERTDIR/client"
-
 EXPOSE 9080
 
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
