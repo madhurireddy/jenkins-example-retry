@@ -14,7 +14,7 @@ pipeline {
           def op = sh(returnStdout: true, script: './test-script.sh').trim()
           print 'target build version11...'
           print op
-          echo "output=$listing"
+          echo "output=$listing.trim()"
         }
       }
     }
