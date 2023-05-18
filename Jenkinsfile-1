@@ -11,7 +11,7 @@ pipeline {
         script {
           print 'target build version...'
           def listing = sh script: 'ls -la /', returnStdout:true
-          def op = sh script: './test-script.sh', returnStdout:true
+          def op = sh script: './test-script.sh', returnStatus:true
           print 'target build version11...'
           print op
           echo "output=$op"
