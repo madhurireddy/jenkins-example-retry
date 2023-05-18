@@ -11,10 +11,10 @@ pipeline {
         script {
           print 'target build version...'
           def listing = sh script: 'ls -la /', returnStdout:true
-          def op = sh(returnStdout: true, script: './test-script.sh').trim()
+          def op = sh script: './test-script.sh', returnStdout:true
           print 'target build version11...'
           print op
-          echo "output=$listing.trim()"
+          echo "output=$op"
         }
       }
     }
