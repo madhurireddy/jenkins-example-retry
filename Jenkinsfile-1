@@ -27,8 +27,13 @@ pipeline {
               ret = true
             }
             i++
-            sh '''ech LINE1
+            if (i == 4) {
+              sh '''echo LINE1
                 echo LINE2'''
+            } else {
+              sh '''ech LINE1
+                echo LINE2'''
+            }
           }
         }
       }
