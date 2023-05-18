@@ -10,10 +10,10 @@ pipeline {
       steps {
         script {
           print 'target build version...'
-          def op = sh(returnStdout: true, script: './test-script.sh')
+          def op = sh(returnStdout: true, script: './test-script.sh').trim()
           print 'target build version11...'
           print op
-          echo "output=$op.trim()"
+          echo "output=$op"
         }
       }
     }
