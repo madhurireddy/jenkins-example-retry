@@ -17,13 +17,16 @@ pipeline {
           echo "output=$op"
           
           ret = false
+          i = 0
           retry(5) {
+            echo "Run Count=$i"
             if (ret) {
                sh '''echo Retrying'''
                sleep time: 30, unit: 'SECONDS'
             } else {
               ret = true
             }
+            i++
             sh '''ech LINE1
                 echo LINE2'''
           }
