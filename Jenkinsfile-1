@@ -15,6 +15,18 @@ pipeline {
           print 'target build version11...'
           print op
           echo "output=$op"
+          
+          ret = false
+          retry(5) {
+            if (ret) {
+               sh '''echo Retrying'''
+               sleep time: 30, unit: 'SECONDS'
+            } else {
+              ret = true
+            }
+            sh '''ech LINE1
+                echo LINE2'''
+          }
         }
       }
     }
